@@ -210,7 +210,6 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="https://unpkg.com/wavesurfer.js"></script>
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.scrollex.min.js"></script>
 			<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -218,16 +217,24 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+		
+			<!-- WaveSurfer.js library -->
+			<script src="https://unpkg.com/wavesurfer.js"></script>
+
 			<script>
 			document.addEventListener('DOMContentLoaded', function() {
-				// Create a WaveSurfer instance for each track
+				// Track data
 				const tracks = [
-					{ id: 'waveform1', src: 'audio/osts/phoenix_flames.mp3' },
-					{ id: 'waveform2', src: 'audio/osts/another_track.mp3' }
+					{ id: 'waveform1', src: 'audio/osts/winterlands_battle.mp3' },
+					{ id: 'waveform2', src: 'audio/osts/weeping_envoy.mp3' },
+					{ id: 'waveform3', src: 'audio/osts/phoenix_flames.mp3' },
+					{ id: 'waveform4', src: 'audio/osts/phoenix_city.mp3' }
 				];
 
+				// Store WaveSurfer instances
 				const wavesurfers = {};
 
+				// Initialize each waveform
 				tracks.forEach(track => {
 					wavesurfers[track.id] = WaveSurfer.create({
 						container: `#${track.id}`,
@@ -239,10 +246,10 @@
 					wavesurfers[track.id].load(track.src);
 				});
 
-				// Play/pause button functionality
-				document.querySelectorAll('.play-pause').forEach(btn => {
-					btn.addEventListener('click', () => {
-						const waveId = btn.getAttribute('data-wave');
+				// Connect each Play/Pause button to its waveform
+				document.querySelectorAll('.play-pause').forEach(button => {
+					button.addEventListener('click', () => {
+						const waveId = button.getAttribute('data-wave');
 						wavesurfers[waveId].playPause();
 					});
 				});
