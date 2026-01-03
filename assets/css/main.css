@@ -2077,6 +2077,16 @@ input, select, textarea {
     font-size: 0.95em;
 }
 
+/* Audio */
+.audio-item {
+    margin-bottom: 2rem; /* spacing between tracks */
+}
+
+.audio-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
 /* Box */
 
 	.box {
