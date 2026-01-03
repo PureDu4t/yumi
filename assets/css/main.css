@@ -2551,57 +2551,66 @@ input, select, textarea {
 	}
 
 /* Icon */
-.bilibili-link {
-    display: inline-block; /* ensures proper alignment */
-    position: relative;    /* optional for hover effects */
-    text-decoration: none;
-}
-
-.bilibili-icon {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-     transform: translateY(4px);
-}
-
-.bilibili-link:before {
-    content: none !important;
-}
-
-	.icon {
-		text-decoration: none;
-		border-bottom: none;
-		position: relative;
+	/* Ensure all social icons align vertically */
+	ul.icons {
+	    display: flex;
+	    align-items: center; /* vertically centers children */
+	    gap: 0.5rem; /* optional spacing between icons */
+	    list-style: none;
+	    padding: 0;
+	    margin: 0;
 	}
-
-		.icon:before {
-			-moz-osx-font-smoothing: grayscale;
-			-webkit-font-smoothing: antialiased;
-			display: inline-block;
-			font-style: normal;
-			font-variant: normal;
-			text-rendering: auto;
-			line-height: 1;
-			text-transform: none !important;
-			font-family: 'Font Awesome 5 Free';
-			font-weight: 400;
-		}
-
-		.icon > .label {
-			display: none;
-		}
-
-		.icon:before {
-			line-height: inherit;
-		}
-
-		.icon.solid:before {
-			font-weight: 900;
-		}
-
-		.icon.brands:before {
-			font-family: 'Font Awesome 5 Brands';
-		}
+	
+	/* Keep standard Font Awesome icons working */
+	.icon {
+	    text-decoration: none;
+	    border-bottom: none;
+	    position: relative;
+	    display: inline-block;
+	}
+	
+	.icon:before {
+	    -moz-osx-font-smoothing: grayscale;
+	    -webkit-font-smoothing: antialiased;
+	    display: inline-block;
+	    font-style: normal;
+	    font-variant: normal;
+	    text-rendering: auto;
+	    line-height: 1;
+	    text-transform: none !important;
+	    font-family: 'Font Awesome 5 Free';
+	    font-weight: 400;
+	}
+	
+	.icon.solid:before {
+	    font-weight: 900;
+	}
+	
+	.icon.brands:before {
+	    font-family: 'Font Awesome 5 Brands';
+	}
+	
+	.icon > .label {
+	    display: none; /* hide text labels */
+	}
+	
+	/* Bilibili custom image */
+	.bilibili-link {
+	    display: inline-block;
+	    text-decoration: none;
+	    position: relative;
+	}
+	
+	.bilibili-link:before {
+	    content: none !important; /* disable Font Awesome pseudo-element */
+	}
+	
+	.bilibili-icon {
+	    width: 24px;
+	    height: 24px;
+	    display: block;
+	    transform: translateY(2px); /* small nudge to align with FA icons */
+	}
 
 /* Image */
 
@@ -4704,6 +4713,7 @@ input, select, textarea {
 		}
 
 	}
+
 
 
 
