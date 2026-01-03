@@ -2087,6 +2087,43 @@ input, select, textarea {
     margin-bottom: 0.25rem;
 }
 
+.audio-item {
+    margin-bottom: 2rem;           /* spacing between tracks */
+    padding: 0.75rem 1rem;         /* padding inside each track block */
+    background-color: #111;         /* dark card background */
+    border-radius: 8px;             /* rounded corners */
+    border: 1px solid #333;         /* subtle border */
+    max-width: 700px;               /* card max width */
+}
+
+.audio-title {
+    font-weight: 600;
+    color: #ffcc00;                 /* title color */
+    margin-bottom: 0.5rem;          /* spacing below title */
+    font-size: 1.1rem;
+}
+
+.audio-item #waveform1,
+.audio-item #waveform2,
+.audio-item #waveform3,
+.audio-item #waveform4 {
+    margin-bottom: 0.5rem;          /* spacing between waveform and button */
+}
+
+.audio-item button.play-pause {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffcc00;
+    color: #111;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.audio-item butt
+
 /* Box */
 
 	.box {
