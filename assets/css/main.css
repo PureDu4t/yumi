@@ -2551,12 +2551,22 @@ input, select, textarea {
 	}
 
 /* Icon */
-	.bilibili-icon {
-	    width: 24px;
-	    height: 24px;
-	    vertical-align: middle;
-	    margin-top: 4px; /* adjust as needed */
-	}
+.bilibili-link {
+    display: inline-block; /* ensures proper alignment */
+    position: relative;    /* optional for hover effects */
+    text-decoration: none;
+}
+
+.bilibili-icon {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+    margin-top: 4px; /* adjust as needed */
+}
+
+.bilibili-link:before {
+    content: none !important;
+}
 
 	.icon {
 		text-decoration: none;
@@ -4694,3 +4704,4 @@ input, select, textarea {
 		}
 
 	}
+
