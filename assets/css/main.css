@@ -2561,7 +2561,7 @@ input, select, textarea {
     width: 24px;
     height: 24px;
     vertical-align: middle;
-    margin-top: 4px; /* adjust as needed */
+    margin-top: 0px; /* adjust as needed */
 }
 
 .bilibili-link:before {
@@ -4704,4 +4704,5 @@ input, select, textarea {
 		}
 
 	}
+
 
