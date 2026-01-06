@@ -3105,6 +3105,14 @@ input, select, textarea {
 		border-top-color: #eeeeee;
 	}
 
+	/* Left-aligned section headers (opt-in) */
+header.major.left {
+  text-align: left;
+  margin-left: 0;
+  margin-right: auto;
+  max-width: none;
+}
+
 /* Table */
 
 	.table-wrapper {
