@@ -13,7 +13,8 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 
-	<script src="https://unpkg.com/wavesurfer.js@7"></script>
+	<script src="https://unpkg.com/wavesurfer.js@7.8.8/dist/wavesurfer.min.js"></script>
+	
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -374,48 +375,50 @@
 			<script src="https://unpkg.com/wavesurfer.js"></script>
 
 			<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				// Track data
-				const tracks = [
-					{ id: 'waveform1', src: 'audio/osts/winterlands_battle.mp3' },
-					{ id: 'waveform2', src: 'audio/osts/weeping_envoy.mp3' },
-					{ id: 'waveform3', src: 'audio/osts/winterlands_explore.mp3' },
-					{ id: 'waveform4', src: 'audio/osts/phoenix_city.mp3' },
-					{ id: 'waveform5', src: 'audio/songs/idwia.mp3' },
-					{ id: 'waveform6', src: 'audio/songs/lock_time.mp3' },
-					{ id: 'waveform7', src: 'audio/songs/dfil.mp3' },
-					{ id: 'waveform8', src: 'audio/jazz/tiramisu.mp3' },
-					{ id: 'waveform9', src: 'audio/arrangements/phoenix_city.mp3' },
-					{ id: 'waveform10', src: 'audio/osts/phoenix_city.mp3' },
-					{ id: 'waveform11', src: 'audio/osts/phoenix_city.mp3' },
-					{ id: 'waveform12', src: 'audio/osts/phoenix_city.mp3' },
-					{ id: 'waveform13', src: 'audio/osts/phoenix_city.mp3' },
-					{ id: 'waveform14', src: 'audio/osts/phoenix_city.mp3' },
-				];
+			document.addEventListener('DOMContentLoaded', function () {
 
-				// Store WaveSurfer instances
-				const wavesurfers = {};
+			const tracks = [
+				{ id: 'waveform1', src: 'audio/osts/winterlands_battle.mp3' },
+				{ id: 'waveform2', src: 'audio/osts/weeping_envoy.mp3' },
+				{ id: 'waveform3', src: 'audio/osts/winterlands_explore.mp3' },
+				{ id: 'waveform4', src: 'audio/osts/phoenix_city.mp3' },
+				{ id: 'waveform5', src: 'audio/songs/idwia.mp3' },
+				{ id: 'waveform6', src: 'audio/songs/lock_time.mp3' },
+				{ id: 'waveform7', src: 'audio/songs/dfil.mp3' },
+				{ id: 'waveform8', src: 'audio/jazz/tiramisu.mp3' }
+			];
 
-				// Initialize each waveform
-				tracks.forEach(track => {
-					wavesurfers[track.id] = WaveSurfer.create({
-						container: `#${track.id}`,
-						waveColor: '#ccc',
-						progressColor: '#ffcc00',
-						height: 80,
-						responsive: true
-					});
-					wavesurfers[track.id].load(track.src);
+			const wavesurfers = {};
+			let audioUnlocked = false;
+
+			tracks.forEach(track => {
+				wavesurfers[track.id] = WaveSurfer.create({
+				container: `#${track.id}`,
+				waveColor: '#ccc',
+				progressColor: '#ffcc00',
+				height: 80,
+				normalize: true
 				});
+				wavesurfers[track.id].load(track.src);
+			});
 
-				// Connect each Play/Pause button to its waveform
-				document.querySelectorAll('.play-pause').forEach(button => {
-					button.addEventListener('click', () => {
-						const waveId = button.getAttribute('data-wave');
-						wavesurfers[waveId].playPause();
-					});
+			document.querySelectorAll('.play-pause').forEach(button => {
+				button.addEventListener('click', () => {
+				const waveId = button.dataset.wave;
+				const ws = wavesurfers[waveId];
+
+				if (!audioUnlocked) {
+					ws.play();   // unlocks AudioContext
+					ws.pause();
+					audioUnlocked = true;
+				}
+
+				ws.playPause();
 				});
 			});
+
+			});
 			</script>
+
 	</body>
 </html>
