@@ -4801,6 +4801,21 @@ header.major.left {
 
 	}
 
+	/* Allow WaveSurfer controls to be clickable */
+	.audio-item,
+	.play-pause,
+	.waveform {
+	position: relative;
+	z-index: 100;
+	pointer-events: auto;
+	}
+
+	/* Disable Massively overlay for audio sections */
+	.post::before {
+	pointer-events: none;
+	}
+
+
 
 
 
