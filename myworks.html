@@ -56,6 +56,7 @@
 									<ul>
 										<li><a href="#osts" class="scrolly">OSTs</a></li>
 										<li><a href="#songs" class="scrolly">Songs</a></li>
+										<li><a href="#live_works" class="scrolly">Songs</a></li>
 									</ul>
 								</li>
 
@@ -117,6 +118,61 @@
 										<h3>Songs</h3>
 										</header>
 										<!-- Arrangements content here -->
+
+								<div class="audio-item">
+									<p class="audio-title">I Don't Want It Anymore</p>
+									<div id="waveform5"></div>
+								<button class="play-pause" data-wave="waveform5">Play/Pause</button>
+								</div>
+
+								<div class="audio-item">
+									<p class="audio-title">致命节拍 Lock Time</p>
+									<div id="waveform6"></div>
+								<button class="play-pause" data-wave="waveform6">Play/Pause</button>
+								</div>
+
+								<div class="audio-item">
+									<p class="audio-title">Don't Fall In Love</p>
+									<div id="waveform7"></div>
+								<button class="play-pause" data-wave="waveform7">Play/Pause</button>
+								</div>
+							</section>
+
+							<!-- Jazz -->
+								<section id="jazz" class="post">
+									<header class="major">
+										<h3>Jazz</h3>
+										</header>
+										<!-- Arrangements content here -->
+
+								<div class="audio-item">
+									<p class="audio-title">Tiramisu</p>
+									<div id="waveform8"></div>
+								<button class="play-pause" data-wave="waveform8">Play/Pause</button>
+								</div>	
+							</section>
+
+							<!-- Live Works -->
+								<section id="live_works" class="post">
+									<header class="major">
+										<h3>Live Works</h3>
+										</header>
+										<!-- Arrangements content here -->
+
+									<div class="video">
+										<iframe
+										width="100%"
+										height="315"
+										src="https://www.youtube.com/embed/DGOSqMZuFik"
+										title="YouTube video player"
+										frameborder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowfullscreen>
+										</iframe>
+										<p>Endlessly Scorching Phoenix Flames</p>
+									</div>
+								</section>
+
 							</section>
 
 						<!-- Arrangements -->
@@ -227,8 +283,18 @@
 				const tracks = [
 					{ id: 'waveform1', src: 'audio/osts/winterlands_battle.mp3' },
 					{ id: 'waveform2', src: 'audio/osts/weeping_envoy.mp3' },
-					{ id: 'waveform3', src: 'audio/osts/phoenix_flames.mp3' },
-					{ id: 'waveform4', src: 'audio/osts/phoenix_city.mp3' }
+					{ id: 'waveform3', src: 'audio/osts/winterlands_explore.mp3' },
+					{ id: 'waveform4', src: 'audio/osts/phoenix_city.mp3' },
+					{ id: 'waveform5', src: 'audio/songs/idwia.mp3' },
+					{ id: 'waveform6', src: 'audio/songs/lock_time.mp3' },
+					{ id: 'waveform7', src: 'audio/songs/dfil.mp3' },
+					{ id: 'waveform8', src: 'audio/jazz/tiramisu.mp3' },
+					{ id: 'waveform9', src: 'audio/arrangements/phoenix_city.mp3' },
+					{ id: 'waveform10', src: 'audio/osts/phoenix_city.mp3' },
+					{ id: 'waveform11', src: 'audio/osts/phoenix_city.mp3' },
+					{ id: 'waveform12', src: 'audio/osts/phoenix_city.mp3' },
+					{ id: 'waveform13', src: 'audio/osts/phoenix_city.mp3' },
+					{ id: 'waveform14', src: 'audio/osts/phoenix_city.mp3' },
 				];
 
 				// Store WaveSurfer instances
