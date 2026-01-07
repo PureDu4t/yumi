@@ -4807,27 +4807,16 @@ header.major.left {
   	border-radius: 3px;
 	}
 
-	/* Make album behave like a normal right-aligned image */
+	.album {
+    float: right;        /* optional if you want right alignment */
+    max-width: 100%;     /* fill the column */
+    margin: 0 0 2rem 2rem;
+	}
+
 	.album img {
-		width: 100%;           /* fill the container (.image.right) */
-		height: auto;          /* maintain aspect ratio */
-		display: block;        /* remove inline spacing issues */
-		border-radius: 8px;    /* optional rounded corners */
-		transition: opacity 0.5s ease; /* optional for fade effects */
-	}
-
-	.album.image.right {
-    max-width: 100%;  /* fill the column */
-    margin: 0 0 2rem 2rem; /* keep spacing */
-	}
-
-
-	/* Responsive: make album full-width on small screens */
-	@media screen and (max-width: 736px) {
-		.album img {
-			max-width: 100%;
-			height: auto;
-		}
+		width: 100%;
+		height: auto;
+		display: block;
 	}
 
 	/* Allow WaveSurfer controls to be clickable */
