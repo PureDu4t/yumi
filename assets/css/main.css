@@ -4807,17 +4807,23 @@ header.major.left {
   	border-radius: 3px;
 	}
 
+	/* Make album behave like a normal right-aligned image */
 	.album {
+	float: right;
+	max-width: 40%;        /* same as .image.right */
+	margin: 0 0 2rem 2rem; /* same spacing as other images */
 	position: relative;
+	top: 0.75rem;          /* optional vertical alignment */
 	}
 
-	.album-image {
-	width: 100%;
+	.album img {
+	width: 100%;           /* fill the container */
 	height: auto;
-	display: block;
-	border-radius: 8px;
-	transition: opacity 0.5s ease;
+	display: block;        /* removes inline spacing issues */
+	border-radius: 8px;    /* optional */
 	}
+
+
 
 
 	/* Allow WaveSurfer controls to be clickable */
