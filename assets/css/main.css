@@ -4814,6 +4814,7 @@ header.major.left {
 	.album-image {
 	width: 100%;
 	height: auto;
+	display: block;
 	border-radius: 8px;
 	transition: opacity 0.5s ease;
 	}
