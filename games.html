@@ -101,12 +101,10 @@
 								</div>
 
 								<!-- RIGHT: Image -->
-								<div class="col-6 col-12-medium">
-								<span class="image fit">
-									<img src="images/toi_cover.jpg"
-										alt="toi_cover">
-								</span>
+								<div class="album">
+								<img src="images/games/winterlands_1.jpg" alt="Screenshot 1" class="album-image">
 								</div>
+
 							
 							<div class="video">
 										<iframe
@@ -259,6 +257,26 @@
 				{ id: 'waveform7', src: 'audio/songs/dfil.mp3' },
 				{ id: 'waveform8', src: 'audio/jazz/tiramisu.mp3' }
 			];
+	
+			const albumImages = [
+			"images/games/toi_1.png",
+			"images/games/toi_2.png",
+			"images/games/toi_3.png"
+			];
+
+			let currentImage = 0;
+			const imgElement = document.querySelector(".album-image");
+
+			setInterval(() => {
+			currentImage = (currentImage + 1) % albumImages.length;
+			imgElement.style.opacity = 0;
+			setTimeout(() => {
+				imgElement.src = albumImages[currentImage];
+				imgElement.style.opacity = 1;
+			}, 500);
+			}, 4000); // rotate every 4 seconds
+
+
 
 			const wavesurfers = {};
 			let audioUnlocked = false;
