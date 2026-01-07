@@ -63,10 +63,14 @@
 							<section id="games" class="post">
 							<header class="major">
 								<h2>Games</h2>
+								
+							</header>
+								<section id="tower_of_infinity" class="post">
+									<header class="major">
+										<h3>Tower of Infinity</h3>
 							</header>
 
-							<section class="post">
-								<div class="row">
+							<div class="row">						
 
 								<!-- LEFT: Text -->
 								<div class="col-6 col-12-medium">
@@ -89,13 +93,15 @@
 								</div>
 
 								<!-- RIGHT: Image -->
-								<div class="album" data-images='[
-								"images/games/toi1.png",
-								"images/games/toi2.png",
-								"images/games/toi3.png"
-								]'>
-								<img src="images/games/toi1.jpg" alt="Tower of Infinity Screenshot">
-								</div>
+								<div class="col-6 col-12-medium">
+									<div class="album" data-images='[
+									"images/games/toi1.png",
+									"images/games/toi2.png",
+									"images/games/toi3.png"
+									]'>
+									<img src="images/games/toi1.png" alt="Tower of Infinity Screenshot">
+									</div>
+								<div>
 
 								</div> <!-- ✅ row closed -->
 
@@ -114,8 +120,12 @@
 							</section>
 							</section>
 
-									
-							<section class="post">
+							</header>
+								<section id="tower_of_infinity" class="post">
+									<header class="major">
+										<h3>Tower of Infinity</h3>
+							</header>
+							
 							<div class="row">
 
 								<!-- LEFT: Text -->
@@ -146,18 +156,6 @@
 								</div>
 
 								</div>
-							
-							<div class="video">
-										<iframe
-										width="100%"
-										height="315"
-										src="https://www.youtube.com/embed/t48ghrkfUC4"
-										title="YouTube video player"
-										frameborder="0"
-										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-										allowfullscreen>
-									</iframe>
-							</div>
 							</section>
 
 										<a href="games/icme.pdf" class="button icon solid fa-file-pdf" target="_blank">
@@ -275,41 +273,6 @@
 				}, 500);
 
 				}, 4000);
-			});
-
-			});
-			</script>
-
-
-
-
-			const wavesurfers = {};
-			let audioUnlocked = false;
-
-			tracks.forEach(track => {
-				wavesurfers[track.id] = WaveSurfer.create({
-				container: `#${track.id}`,
-				waveColor: '#ccc',
-				progressColor: '#ffcc00',
-				height: 80,
-				normalize: true
-				});
-				wavesurfers[track.id].load(track.src);
-			});
-
-			document.querySelectorAll('.play-pause').forEach(button => {
-				button.addEventListener('click', () => {
-				const waveId = button.dataset.wave;
-				const ws = wavesurfers[waveId];
-
-				if (!audioUnlocked) {
-					ws.play();   // unlocks AudioContext
-					ws.pause();
-					audioUnlocked = true;
-				}
-
-				ws.playPause();
-				});
 			});
 
 			});
