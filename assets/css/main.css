@@ -4816,6 +4816,12 @@ header.major.left {
 		transition: opacity 0.5s ease; /* optional for fade effects */
 	}
 
+	.album.image.right {
+    max-width: 100%;  /* fill the column */
+    margin: 0 0 2rem 2rem; /* keep spacing */
+	}
+
+
 	/* Responsive: make album full-width on small screens */
 	@media screen and (max-width: 736px) {
 		.album img {
