@@ -4807,17 +4807,19 @@ header.major.left {
   	border-radius: 3px;
 	}
 
+	/* Album inside a column — fill the column width */
 	.album {
-    float: right;        /* optional if you want right alignment */
-    max-width: 100%;     /* fill the column */
-    margin: 0 0 2rem 2rem;
+		width: 100%;          /* fill the .col-6 container */
+		margin: 0 0 2rem 0;   /* spacing below */
 	}
 
 	.album img {
-		width: 100%;
-		height: auto;
-		display: block;
+		width: 100%;          /* fill album container */
+		height: auto;         /* maintain aspect ratio */
+		display: block;       /* remove inline spacing */
+		border-radius: 8px;   /* optional */
 	}
+
 
 	/* Allow WaveSurfer controls to be clickable */
 	.audio-item,
