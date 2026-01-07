@@ -4810,7 +4810,7 @@ header.major.left {
 	/* Make album behave like a normal right-aligned image */
 	.album {
 	float: right;
-	max-width: 40%;
+	max-width: 100%;
 	}
 
 	.album img {
