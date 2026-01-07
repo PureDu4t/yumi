@@ -89,12 +89,12 @@
 								</div>
 
 								<!-- RIGHT: Image -->
-								<div class="col-6 col-12-medium">
-									<div class="album">
-									<img src="images/games/toi1.jpg"
-										alt="Screenshot 1"
-										class="album-image">
-									</div>
+								<div class="album" data-images='[
+								"images/games/toi1.png",
+								"images/games/toi2.png",
+								"images/games/toi3.png"
+								]'>
+								<img src="images/games/toi1.jpg" alt="Tower of Infinity Screenshot">
 								</div>
 
 								</div> <!-- ✅ row closed -->
@@ -139,10 +139,13 @@
 								</div>
 
 								<!-- RIGHT: Image -->
-								<span class="image fit">
-								<img src="images/games/icme.png" alt="I Close My Eyes Cover">
-								</span>
+								 <div class="col-6 col-12-medium">
+									<span class="image fit">
+									<img src="images/games/icme.png" alt="I Close My Eyes Cover">
+									</span>
+								</div>
 
+								</div>
 							
 							<div class="video">
 										<iframe
@@ -253,36 +256,30 @@
 			<script src="assets/js/main.js"></script>
 
 			<script>
-			document.addEventListener('DOMContentLoaded', function () {
+			document.addEventListener("DOMContentLoaded", () => {
 
-			const tracks = [
-				{ id: 'waveform1', src: 'audio/osts/winterlands_battle.mp3' },
-				{ id: 'waveform2', src: 'audio/osts/weeping_envoy.mp3' },
-				{ id: 'waveform3', src: 'audio/osts/winterlands_explore.mp3' },
-				{ id: 'waveform4', src: 'audio/osts/phoenix_city.mp3' },
-				{ id: 'waveform5', src: 'audio/songs/idwia.mp3' },
-				{ id: 'waveform6', src: 'audio/songs/lock_time.mp3' },
-				{ id: 'waveform7', src: 'audio/songs/dfil.mp3' },
-				{ id: 'waveform8', src: 'audio/jazz/tiramisu.mp3' }
-			];
-	
-			const albumImages = [
-			"images/games/toi_1.png",
-			"images/games/toi_2.png",
-			"images/games/toi_3.png"
-			];
+			document.querySelectorAll(".album").forEach(album => {
+				const images = JSON.parse(album.dataset.images);
+				const img = album.querySelector("img");
+				let index = 0;
 
-			let currentImage = 0;
-			const imgElement = document.querySelector(".album-image");
+				if (!images || images.length <= 1) return;
 
-			setInterval(() => {
-			currentImage = (currentImage + 1) % albumImages.length;
-			imgElement.style.opacity = 0;
-			setTimeout(() => {
-				imgElement.src = albumImages[currentImage];
-				imgElement.style.opacity = 1;
-			}, 500);
-			}, 4000); // rotate every 4 seconds
+				setInterval(() => {
+				index = (index + 1) % images.length;
+				img.style.opacity = 0;
+
+				setTimeout(() => {
+					img.src = images[index];
+					img.style.opacity = 1;
+				}, 500);
+
+				}, 4000);
+			});
+
+			});
+			</script>
+
 
 
 
