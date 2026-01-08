@@ -4836,10 +4836,12 @@ header.major.left {
 	/* Make audio-tags lean to the right */
 	.audio-tags {
 		display: flex;
-		justify-content: flex-end;    /* pushes tags to the right */
-		margin-top: 0.3rem;           /* slight spacing under button */
-		gap: 0.4rem;                  /* spacing between tags */
+		justify-content: flex-end;   /* push tags to right */
+		width: 100%;                 /* make container full width */
+		margin-top: 0.3rem;
+		gap: 0.4rem;
 	}
+
 
 	.audio-tags .tag {
 		display: inline-block;
