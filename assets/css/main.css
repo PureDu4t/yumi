@@ -4802,13 +4802,12 @@ header.major.left {
 	}
 
 
-	.bio {
-	text-align: left;        /* force left alignment */
-	text-indent: 2em;       /* indent first line */
-	margin-left: 0;         /* prevent centering */
+	.bio-section p {
+	text-align: left;
+	text-indent: 2em;
+	margin-left: 0;
 	margin-right: 0;
-	max-width: 100%;        /* allow full width */
-}
+	}
 
 	.highlight {
   	background-color: #fff3b0;
