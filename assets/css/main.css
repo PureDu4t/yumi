@@ -4828,6 +4828,21 @@ header.major.left {
 		border-radius: 8px;   /* optional */
 	}
 
+	.audio-tags {
+		display: inline-block;
+		margin-top: 0.5rem; /* a little space under video */
+		}
+
+		.audio-tags .tag {
+		display: inline-block;
+		margin-right: 0.3rem;
+		font-size: 0.8rem;
+		color: #fff;
+		background-color: #666;
+		padding: 0.2rem 0.4rem;
+		border-radius: 3px;
+		}
+
 
 	/* Allow WaveSurfer controls to be clickable */
 	.audio-item,
