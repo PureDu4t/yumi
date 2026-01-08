@@ -4828,12 +4828,29 @@ header.major.left {
 		border-radius: 8px;   /* optional */
 	}
 
-	/* Artistic scattered image layout — vertical stays natural */
+		/* ===============================
+	Prevent column-level scrolling
+	=============================== */
+	.col-6,
+	.col-12-medium {
+		overflow: visible !important;
+	}
+
+	/* Ensure the page handles scrolling */
+	#main {
+		overflow: visible;
+	}
+
+	/* ===============================
+	Artistic scattered image layout
+	(horizontal scatter only)
+	=============================== */
 	.scattered-images {
 		display: flex;
 		flex-direction: column;
-		gap: 4rem;              /* vertical spacing */
-		overflow-x: hidden;     /* 🔒 prevent sideways overflow */
+		gap: 4rem;              /* vertical spacing between images */
+		padding: 2rem 0;
+		overflow: hidden;       /* 🔒 prevents inner scrollbars */
 	}
 
 	/* Base image styling */
@@ -4847,9 +4864,10 @@ header.major.left {
 		box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 		transition: transform 0.4s ease;
 		transform-origin: center;
+		will-change: transform;
 	}
 
-	/* Horizontal scatter + rotation ONLY */
+	/* Horizontal scatter + rotation only */
 	.scattered-images img:nth-child(1) {
 		transform: translateX(-8%) rotate(-18deg) scale(0.9);
 	}
@@ -4866,10 +4884,27 @@ header.major.left {
 		transform: translateX(7%) rotate(14deg) scale(0.9);
 	}
 
-	/* Subtle hover polish */
+	/* Subtle hover polish (no overflow jump) */
 	.scattered-images img:hover {
-		transform: translateX(0) rotate(0deg) scale(1.05);
+		transform: scale(1.05);
 		z-index: 2;
+	}
+
+	/* ===============================
+	Mobile fallback (stacked layout)
+	=============================== */
+	@media screen and (max-width: 736px) {
+		.scattered-images {
+			gap: 2rem;
+			padding: 0;
+			overflow: visible;
+		}
+
+		.scattered-images img {
+			max-width: 100%;
+			transform: none !important;
+			box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+		}
 	}
 
 	/* Audio item styling */
