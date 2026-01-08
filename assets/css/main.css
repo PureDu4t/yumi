@@ -4829,28 +4829,27 @@ header.major.left {
 	}
 
 	.audio-item {
-		position: relative;       /* allows positioning inside */
-		margin-bottom: 1.5rem;    /* spacing between audio items */
-		display: flex;
-		flex-direction: column;   /* stack waveform + play button + tags */
+    margin-bottom: 1.5rem;
 	}
 
-	/* Container for tags: align right with play button */
+	/* Wrap the button and tags in a row */
+	.audio-controls {
+		display: flex;
+		align-items: center;       /* vertically center button and tags */
+		justify-content: space-between; /* button left, tags right */
+		margin-top: 0.5rem;
+	}
+
 	.audio-tags {
 		display: flex;
-		justify-content: flex-end; /* push tags to the right */
-		width: 100%;
-		margin-top: 0.3rem;       /* space above tags */
-		gap: 0.4rem;              /* space between tags */
+		gap: 0.4rem;
 	}
 
-	/* Individual tags */
 	.audio-tags .tag {
-		display: inline-block;
 		font-size: 0.85rem;
 		font-weight: 500;
 		color: #fff;
-		background-color: #666;    /* gray background */
+		background-color: #666; /* gray background */
 		padding: 0.3rem 0.6rem;
 		border-radius: 12px;
 		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
