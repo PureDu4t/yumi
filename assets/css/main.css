@@ -4832,6 +4832,7 @@ header.major.left {
 	.scattered-images {
 		position: relative;
 		min-height: 600px;
+		overflow: hidden; /* 🔒 keeps everything inside */
 	}
 
 	/* Base image styling */
