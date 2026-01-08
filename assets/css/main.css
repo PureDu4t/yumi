@@ -4828,6 +4828,45 @@ header.major.left {
 		border-radius: 8px;   /* optional */
 	}
 
+	/* Scattered image layout */
+	.scattered-images {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		gap: 3rem;               /* space between images */
+		padding: 2rem;
+	}
+
+	/* Base image styling */
+	.scattered-images img {
+		width: 80%;
+		max-width: 420px;
+		border-radius: 12px;
+		box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+		transition: transform 0.4s ease;
+	}
+
+	/* Artistic offsets */
+	.scattered-images img:nth-child(1) {
+		align-self: flex-start;
+		transform: rotate(-2deg);
+	}
+
+	.scattered-images img:nth-child(2) {
+		align-self: flex-end;
+		transform: rotate(2.5deg);
+	}
+
+	.scattered-images img:nth-child(3) {
+		align-self: center;
+		transform: rotate(-1deg);
+	}
+
+	/* Optional hover polish */
+	.scattered-images img:hover {
+		transform: scale(1.03);
+	}
+
 	/* Audio item styling */
 	.audio-item {
 		margin-bottom: 1.5rem;
