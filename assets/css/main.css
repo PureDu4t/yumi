@@ -4828,21 +4828,29 @@ header.major.left {
 		border-radius: 8px;   /* optional */
 	}
 
+	.audio-item {
+    position: relative;           /* so absolute/flex positioning works */
+    margin-bottom: 1.5rem;        /* spacing between audio items */
+	}
+
+	/* Make audio-tags lean to the right */
 	.audio-tags {
-		display: inline-block;
-		margin-top: 0.5rem; /* a little space under video */
-		}
+		display: flex;
+		justify-content: flex-end;    /* pushes tags to the right */
+		margin-top: 0.3rem;           /* slight spacing under button */
+		gap: 0.4rem;                  /* spacing between tags */
+	}
 
-		.audio-tags .tag {
+	.audio-tags .tag {
 		display: inline-block;
-		margin-right: 0.3rem;
-		font-size: 0.8rem;
+		font-size: 0.85rem;
+		font-weight: 500;
 		color: #fff;
-		background-color: #666;
-		padding: 0.2rem 0.4rem;
-		border-radius: 3px;
-		}
-
+		background-color: #007BFF;
+		padding: 0.3rem 0.6rem;
+		border-radius: 12px;
+		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+	}
 
 	/* Allow WaveSurfer controls to be clickable */
 	.audio-item,
