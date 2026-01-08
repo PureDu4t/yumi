@@ -4828,44 +4828,72 @@ header.major.left {
 		border-radius: 8px;   /* optional */
 	}
 
-	/* Scattered image layout */
+	/* Artistic scattered image layout */
 	.scattered-images {
 		position: relative;
-		display: flex;
-		flex-direction: column;
-		gap: 3rem;               /* space between images */
-		padding: 2rem;
+		min-height: 600px;
 	}
 
 	/* Base image styling */
 	.scattered-images img {
-		width: 80%;
-		max-width: 420px;
-		border-radius: 12px;
-		box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+		position: absolute;
+		max-width: 280px;     /* upper bound only */
+		width: auto;
+		height: auto;
+		border-radius: 10px;
+		box-shadow: 0 12px 28px rgba(0,0,0,0.25);
 		transition: transform 0.4s ease;
 	}
 
-	/* Artistic offsets */
+	/* Individual scatter rules */
 	.scattered-images img:nth-child(1) {
-		align-self: flex-start;
-		transform: rotate(-2deg);
+		top: 0%;
+		left: 5%;
+		width: 220px;
+		transform: rotate(-18deg);
 	}
 
 	.scattered-images img:nth-child(2) {
-		align-self: flex-end;
-		transform: rotate(2.5deg);
+		top: 20%;
+		right: 8%;
+		width: 260px;
+		transform: rotate(22deg);
 	}
 
 	.scattered-images img:nth-child(3) {
-		align-self: center;
-		transform: rotate(-1deg);
+		top: 45%;
+		left: 25%;
+		width: 200px;
+		transform: rotate(-30deg);
 	}
 
-	/* Optional hover polish */
-	.scattered-images img:hover {
-		transform: scale(1.03);
+	.scattered-images img:nth-child(4) {
+		top: 65%;
+		right: 20%;
+		width: 240px;
+		transform: rotate(14deg);
 	}
+
+	/* Subtle hover polish */
+	.scattered-images img:hover {
+		transform: scale(1.05) rotate(var(--rot, 0deg));
+	}
+
+	@media screen and (max-width: 736px) {
+    .scattered-images {
+        position: static;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .scattered-images img {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        transform: none !important;
+    }
+}
 
 	/* Audio item styling */
 	.audio-item {
