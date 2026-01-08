@@ -4815,6 +4815,19 @@ header.major.left {
   	border-radius: 3px;
 	}
 
+	/* Album inside a column — fill the column width */
+	.album {
+		width: 100%;          /* fill the .col-6 container */
+		margin: 0 0 2rem 0;   /* spacing below */
+	}
+
+	.album img {
+		width: 100%;          /* fill album container */
+		height: auto;         /* maintain aspect ratio */
+		display: block;       /* remove inline spacing */
+		border-radius: 8px;   /* optional */
+	}
+
 	/* Artistic scattered image layout — vertical stays natural */
 	.scattered-images {
 		display: flex;
