@@ -4801,6 +4801,15 @@ header.major.left {
 
 	}
 
+
+	.bio {
+	text-align: left;        /* force left alignment */
+	text-indent: 2em;       /* indent first line */
+	margin-left: 0;         /* prevent centering */
+	margin-right: 0;
+	max-width: 100%;        /* allow full width */
+}
+
 	.highlight {
   	background-color: #fff3b0;
   	padding: 0 4px;
