@@ -4828,24 +4828,27 @@ header.major.left {
 		border-radius: 8px;   /* optional */
 	}
 
+	/* Audio item styling */
 	.audio-item {
-    margin-bottom: 1.5rem;
+		margin-bottom: 1.5rem;
 	}
 
-	/* Wrap the button and tags in a row */
+	/* Play button + tags in one row */
 	.audio-controls {
 		display: flex;
-		align-items: center;       /* vertically center button and tags */
-		justify-content: space-between; /* button left, tags right */
+		justify-content: space-between;
+		align-items: center;
 		margin-top: 0.5rem;
 	}
 
+	/* Tags styling */
 	.audio-tags {
 		display: flex;
 		gap: 0.4rem;
 	}
 
 	.audio-tags .tag {
+		display: inline-block;
 		font-size: 0.85rem;
 		font-weight: 500;
 		color: #fff;
@@ -4854,6 +4857,7 @@ header.major.left {
 		border-radius: 12px;
 		box-shadow: 0 1px 2px rgba(0,0,0,0.2);
 	}
+
 
 	/* Allow WaveSurfer controls to be clickable */
 	.audio-item,
