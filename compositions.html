@@ -6,7 +6,8 @@
 -->
 <html>
 	<head>
-		<title>Compositions - Yumi's Artist Website</title>
+		<title data-lang="en">Compositions - Yumi's Artist Website</title>
+		<title data-lang="zh" style="display:none;">原创作品 - Yumi的艺术网站</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -48,7 +49,6 @@
 								<span data-lang="en">Contact Me</span>
 								<span data-lang="zh" style="display:none;">联系我</span>
 							</a></li>
-							</li>
 						</ul>
 					<ul class="icons">
 						<li><a href="https://www.youtube.com/@jcpuredust" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
@@ -58,6 +58,13 @@
 								class="icon brands fa-itch-io">
 								<span class="label">itch.io</span>
 							</a>
+						</li>
+						<!-- 语言切换按钮 -->
+						<li class="language-toggle-container" style="margin-left: 15px; padding-top: 5px;">
+							<button id="language-toggle" class="button small icon">
+								<span data-lang="en">中文</span>
+								<span data-lang="zh" style="display:none;">EN</span>
+							</button>
 						</li>
 					</ul>
 					</nav>
@@ -119,7 +126,7 @@
 				<div data-lang="en">
 					<p class="audio-title">Winterlands Battle Theme</p>
 				</div>
-				<div data-lang="zh">
+				<div data-lang="zh" style="display:none;">
 					<p class="audio-title">雪原战斗曲</p>
 				</div>
                 <div id="waveform1"></div>
@@ -129,8 +136,10 @@
 						<span data-lang="zh" style="display:none;">播放/暂停</span>
 					</button>
                     <span class="audio-tags">
-                        <span class="tag">Orchestral</span>
-                        <span class="tag">Battle Theme</span>
+                        <span class="tag" data-lang="en">Orchestral</span>
+                        <span class="tag" data-lang="zh" style="display:none;">管弦</span>
+                        <span class="tag" data-lang="en">Battle Theme</span>
+                        <span class="tag" data-lang="zh" style="display:none;">jrpg</span>
                     </span>
                 </div>
             </div>
@@ -140,7 +149,7 @@
                <div data-lang="en">
 					<p class="audio-title">Weeping Envoy of God</p>
 				</div>
-				<div data-lang="zh">
+				<div data-lang="zh" style="display:none;">
 					<p class="audio-title">啜泣的神使</p>
 				</div>
                 <div id="waveform2"></div>
@@ -150,7 +159,8 @@
 						<span data-lang="zh" style="display:none;">播放/暂停</span>
 					</button>
                     <span class="audio-tags">
-                        <span class="tag">Hybrid</span>
+                        <span class="tag" data-lang="en">Hybrid</span>
+                        <span class="tag" data-lang="zh" style="display:none;">管弦电音融合</span>
                     </span>
                 </div>
             </div>
@@ -160,8 +170,8 @@
                 <div data-lang="en">
 					<p class="audio-title">Winterlands Exploration Theme</p>
 				</div>
-				<div data-lang="zh">
-					<p class="audio-title">雪原——探索</p>
+				<div data-lang="zh" style="display:none;">
+					<p class="audio-title">雪原探索曲</p>
 				</div>
                 <div id="waveform3"></div>
                 <div class="audio-controls">
@@ -170,7 +180,8 @@
 						<span data-lang="zh" style="display:none;">播放/暂停</span>
 					</button>
                     <span class="audio-tags">
-                        <span class="tag">Chamber</span>
+                        <span class="tag" data-lang="en">Chamber</span>
+                        <span class="tag" data-lang="zh" style="display:none;">室内乐</span>
                     </span>
                 </div>
             </div>
@@ -200,7 +211,12 @@
 
             <!-- I Don't Want It Anymore -->
             <div class="audio-item">
-                <p class="audio-title">I Don't Want It Anymore</p>
+                <div data-lang="en">
+					<p class="audio-title">I Don't Want It Anymore</p>
+				</div>
+				<div data-lang="zh" style="display:none;">
+					<p class="audio-title">I Don't Want It Anymore</p>
+				</div>
                 <div id="waveform4"></div>
                 <div class="audio-controls">
                     <button class="play-pause" data-wave="waveform4">
@@ -208,15 +224,22 @@
 						<span data-lang="zh" style="display:none;">播放/暂停</span>
 					</button>
                     <span class="audio-tags">
-                        <span class="tag">Pop</span>
-                        <span class="tag">Synthetic</span>
+                        <span class="tag" data-lang="en">Pop</span>
+                        <span class="tag" data-lang="zh" style="display:none;">流行</span>
+                        <span class="tag" data-lang="en">Synthetic</span>
+                        <span class="tag" data-lang="zh" style="display:none;">合成器</span>
                     </span>
                 </div>
             </div>
 
             <!-- 致命节拍 Lock Time -->
             <div class="audio-item">
-                <p class="audio-title">致命节拍 Lock Time</p>
+                <div data-lang="en">
+					<p class="audio-title">致命节拍 Lock Time</p>
+				</div>
+				<div data-lang="zh" style="display:none;">
+					<p class="audio-title">致命节拍 Lock Time</p>
+				</div>
                 <div id="waveform5"></div>
                 <div class="audio-controls">
                     <button class="play-pause" data-wave="waveform5">
@@ -224,16 +247,24 @@
 						<span data-lang="zh" style="display:none;">播放/暂停</span>
 					</button>
                     <span class="audio-tags">
-                        <span class="tag">J-pop</span>
-                        <span class="tag">Latin</span>
-                        <span class="tag">Virtual Singer</span>
+                        <span class="tag" data-lang="en">J-pop</span>
+                        <span class="tag" data-lang="zh" style="display:none;">J-pop</span>
+                        <span class="tag" data-lang="en">Latin</span>
+                        <span class="tag" data-lang="zh" style="display:none;">拉丁</span>
+                        <span class="tag" data-lang="en">Virtual Singer</span>
+                        <span class="tag" data-lang="zh" style="display:none;">虚拟歌手</span>
                     </span>
                 </div>
             </div>
 
             <!-- Don't Fall In Love -->
             <div class="audio-item">
-                <p class="audio-title">Don't Fall In Love</p>
+                <div data-lang="en">
+					<p class="audio-title">Don't Fall In Love</p>
+				</div>
+				<div data-lang="zh" style="display:none;">
+					<p class="audio-title">Don't Fall In Love</p>
+				</div>
                 <div id="waveform6"></div>
                 <div class="audio-controls">
                     <button class="play-pause" data-wave="waveform6">
@@ -241,8 +272,10 @@
 						<span data-lang="zh" style="display:none;">播放/暂停</span>
 					</button>
                     <span class="audio-tags">
-                        <span class="tag">Musical</span>
-                        <span class="tag">Cinematic Pop</span>
+                        <span class="tag" data-lang="en">Musical</span>
+                        <span class="tag" data-lang="zh" style="display:none;">音乐剧</span>
+                        <span class="tag" data-lang="en">Cinematic Pop</span>
+                        <span class="tag" data-lang="zh" style="display:none;">影视流行</span>
                     </span>
                 </div>
             </div>
@@ -272,7 +305,12 @@
 
             <!-- Tiramisu -->
             <div class="audio-item">
-                <p class="audio-title">Tiramisu</p>
+                <div data-lang="en">
+					<p class="audio-title">Tiramisu</p>
+				</div>
+				<div data-lang="zh" style="display:none;">
+					<p class="audio-title">提拉米苏</p>
+				</div>
                 <div id="waveform7"></div>
                 <div class="audio-controls">
                     <button class="play-pause" data-wave="waveform7">
@@ -280,8 +318,8 @@
 						<span data-lang="zh" style="display:none;">播放/暂停</span>
 					</button>
                     <span class="audio-tags">
-                        <span class="tag">Jazz</span>
-                        <span class="tag">Instrumental</span>
+                        <span class="tag" data-lang="en">Jazz</span>
+                        <span class="tag" data-lang="zh" style="display:none;">爵士</span>
                     </span>
                 </div>
             </div>
@@ -306,8 +344,10 @@
 										<h3 data-lang="zh" style="display:none;">现场作品</h3>
 										</header>
 										<!-- original content here -->
-									<h2 data-lang="en">"Ever Scorching Phoenix Flames" Performed At The BSO</h2>
-									<h2 data-lang="zh" style="display:none;">"永恒燃烧的凤凰火焰"在波士顿交响乐团演出</h2>
+									<h2 data-lang="en">"Ever Scorching Phoenix Flames"</h2>
+									<strong data-lang="en">Performed At The BSO</strong>
+									<h2 data-lang="zh" style="display:none;">"凤火燎原"</h2>
+									<strong data-lang="zh" style="display:none;">在波士顿交响乐团演出</strong>
 									<div class="video">
 										<iframe
 										width="100%"
@@ -431,6 +471,7 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
+			<!-- 注意：确保smart-language-switcher.js文件存在 -->
 			<script src="assets/js/smart-language-switcher.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
