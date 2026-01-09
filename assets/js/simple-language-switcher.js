@@ -1,4 +1,4 @@
-// 智能语言切换器（修正版）
+// 简单语言切换器（稳定修正版）
 class SmartLanguageSwitcher {
   constructor() {
     this.domains = {
@@ -19,7 +19,7 @@ class SmartLanguageSwitcher {
 
     console.log('🌐 域名:', location.hostname);
     console.log('📍 站点:', this.currentDomain);
-    console.log('🈯 语言:', this.currentLang);
+    console.log('🈯 当前语言:', this.currentLang);
   }
 
   detectDomain() {
@@ -42,7 +42,7 @@ class SmartLanguageSwitcher {
     const navLinks = document.querySelector('#nav .links');
     if (!navLinks) return;
 
-    // Remove existing button if any
+    // remove existing
     const existing = document.getElementById('smart-lang-toggle');
     if (existing) existing.parentElement.remove();
 
@@ -81,19 +81,15 @@ class SmartLanguageSwitcher {
     this.updateTitle();
   }
 
-  /** ✅ FIXED + ADDED METHOD */
+  // ✅ FIXED: button now shows TARGET language
   updateToggleButton() {
     const btn = document.getElementById('smart-lang-toggle');
     if (!btn) return;
 
     const label = btn.querySelector('.lang-label');
 
-    // Domain-based label
-    if (this.currentDomain === 'cn') {
-      label.textContent = '中文';
-    } else {
-      label.textContent = 'English';
-    }
+    // Show the language user will switch TO
+    label.textContent = this.currentLang === 'en' ? '中文' : 'English';
   }
 
   updateTitle() {
@@ -102,13 +98,15 @@ class SmartLanguageSwitcher {
         index: "Yumi's Artist Website",
         compositions: "My Compositions - Yumi",
         arrangements: "My Arrangements - Yumi",
-        games: "My Games - Yumi"
+        games: "My Games - Yumi",
+        contact: "Contact Me - Yumi"
       },
       zh: {
-        index: "Yumi 艺术家网站",
-        compositions: "原创作品 - Yumi",
-        arrangements: "改编作品 - Yumi",
-        games: "我的游戏 - Yumi"
+        index: "俞米的个人网站",
+        compositions: "原创作品 - 俞米",
+        arrangements: "改编作品 - 俞米",
+        games: "我的游戏 - 俞米",
+        contact: "联系我 - 俞米"
       }
     };
 
@@ -116,13 +114,14 @@ class SmartLanguageSwitcher {
       location.pathname.includes('compositions') ? 'compositions' :
       location.pathname.includes('arrangements') ? 'arrangements' :
       location.pathname.includes('games') ? 'games' :
+      location.pathname.includes('contactme') ? 'contact' :
       'index';
 
     document.title = titles[this.currentLang][page];
   }
 }
 
-// 启动
+// 启动（只需要这一处）
 document.addEventListener('DOMContentLoaded', () => {
   window.smartLangSwitcher = new SmartLanguageSwitcher();
 });
