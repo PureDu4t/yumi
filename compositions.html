@@ -48,12 +48,6 @@
 								<span data-lang="en">Contact Me</span>
 								<span data-lang="zh" style="display:none;">联系我</span>
 							</a></li>
-							<!-- 语言切换按钮 -->
-							<li style="margin-left: 10px;">
-								<button id="language-toggle" class="button small">
-									<span data-lang="en">中文</span>
-									<span data-lang="zh" style="display:none;">English</span>
-								</button>
 							</li>
 						</ul>
 					<ul class="icons">
@@ -81,7 +75,7 @@
 							</span>
 							<span data-lang="zh" style="display:none;">
 								(注：本页面仅展示我的<b>音频</b>和<b>视频</b>格式的原创作品。
-								如需查看我的<b>乐谱制作</b>能力，
+								如需查看我的<b>制谱</b>能力，
 								请访问<a href="arrangements.html" style="color: blue;">我的改编作品</a>页面。)
 							</span>
 						</p>
@@ -93,7 +87,7 @@
 							<ul class="toc">
 									<li><a href="#osts" class="scrolly">
 										<span data-lang="en">OSTs</span>
-										<span data-lang="zh" style="display:none;">原声配乐</span>
+										<span data-lang="zh" style="display:none;">配乐</span>
 									</a></li>
 									<li><a href="#songs" class="scrolly">
 										<span data-lang="en">Songs</span>
@@ -113,7 +107,7 @@
 <section id="osts" class="post">
     <header class="major left">
         <h3 data-lang="en">OSTs</h3>
-        <h3 data-lang="zh" style="display:none;">原声配乐</h3>
+        <h3 data-lang="zh" style="display:none;">配乐</h3>
     </header>
 
     <div class="row">
@@ -122,7 +116,12 @@
 
             <!-- Winterlands Battle Theme -->
             <div class="audio-item">
-                <p class="audio-title">Winterlands Battle Theme</p>
+				<div data-lang="en">
+					<p class="audio-title">Winterlands Battle Theme</p>
+				</div>
+				<div data-lang="zh">
+					<p class="audio-title">雪原战斗曲</p>
+				</div>
                 <div id="waveform1"></div>
                 <div class="audio-controls">
                     <button class="play-pause" data-wave="waveform1">
@@ -138,7 +137,12 @@
 
             <!-- Weeping Envoy of God -->
             <div class="audio-item">
-                <p class="audio-title">Weeping Envoy of God</p>
+               <div data-lang="en">
+					<p class="audio-title">Weeping Envoy of God</p>
+				</div>
+				<div data-lang="zh">
+					<p class="audio-title">啜泣的神使</p>
+				</div>
                 <div id="waveform2"></div>
                 <div class="audio-controls">
                     <button class="play-pause" data-wave="waveform2">
@@ -153,7 +157,12 @@
 
             <!-- Winterlands Exploration Theme -->
             <div class="audio-item">
-                <p class="audio-title">Winterlands Exploration Theme</p>
+                <div data-lang="en">
+					<p class="audio-title">Winterlands Exploration Theme</p>
+				</div>
+				<div data-lang="zh">
+					<p class="audio-title">雪原——探索</p>
+				</div>
                 <div id="waveform3"></div>
                 <div class="audio-controls">
                     <button class="play-pause" data-wave="waveform3">
@@ -422,8 +431,8 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
 			<script src="assets/js/smart-language-switcher.js"></script>
+			<script src="assets/js/main.js"></script>
 			<script>
 			const form = document.getElementById('contact-form');
 
