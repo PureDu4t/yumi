@@ -492,9 +492,9 @@
 			<script src="assets/js/smart-language-switcher.js"></script>
 			<script src="assets/js/main.js"></script>
 			<script>
-			const form = document.getElementById('contact-form');
+				const form = document.getElementById('contact-form');
 
-			form.addEventListener('submit', async (e) => {
+				form.addEventListener('submit', async (e) => {
 				e.preventDefault();
 
 				const data = new FormData(form);
@@ -502,71 +502,96 @@
 					method: 'POST',
 					body: data,
 					headers: {
-						'Accept': 'application/json'
+					'Accept': 'application/json'
 					}
 				});
 
 				if (response.ok) {
 					if (document.documentElement.lang === 'zh') {
-						alert("感谢！您的留言已发送 💛");
+					alert("感谢！您的留言已发送 💛");
 					} else {
-						alert("Thank you! Your message has been sent 💛");
+					alert("Thank you! Your message has been sent 💛");
 					}
 					form.reset();
 				} else {
 					if (document.documentElement.lang === 'zh') {
-						alert("出错了！请再试一次。");
+					alert("出错了！请再试一次。");
 					} else {
-						alert("Oops! Something went wrong. Please try again.");
+					alert("Oops! Something went wrong. Please try again.");
 					}
 				}
-			});
-			</script>
-
-			<script>
-			document.addEventListener('DOMContentLoaded', function () {
-
-			const tracks = [
-				{ id: 'waveform1', src: 'audio/osts/winterlands_battle.mp3' },
-				{ id: 'waveform2', src: 'audio/osts/weeping_envoy.mp3' },
-				{ id: 'waveform3', src: 'audio/osts/winterlands_explore.mp3' },
-				{ id: 'waveform4', src: 'audio/songs/idwia.mp3' },
-				{ id: 'waveform5', src: 'audio/songs/lock_time.mp3' },
-				{ id: 'waveform6', src: 'audio/songs/dfil.mp3' },
-				{ id: 'waveform7', src: 'audio/jazz/tiramisu.mp3' }
-			];
-
-			const wavesurfers = {};
-			let audioUnlocked = false;
-
-			tracks.forEach(track => {
-				wavesurfers[track.id] = WaveSurfer.create({
-				container: `#${track.id}`,
-				waveColor: '#ccc',
-				progressColor: '#ffcc00',
-				height: 80,
-				normalize: true
 				});
-				wavesurfers[track.id].load(track.src);
-			});
+				</script>
 
-			document.querySelectorAll('.play-pause').forEach(button => {
-				button.addEventListener('click', () => {
-				const waveId = button.dataset.wave;
-				const ws = wavesurfers[waveId];
+				<script>
+				document.addEventListener('DOMContentLoaded', () => {
+				if (typeof WaveSurfer !== 'undefined') {
+					const tracks = [
+					{ id: 'waveform1', src: 'audio/osts/winterlands_battle.mp3' },
+					{ id: 'waveform2', src: 'audio/osts/weeping_envoy.mp3' },
+					{ id: 'waveform3', src: 'audio/osts/winterlands_explore.mp3' },
+					{ id: 'waveform4', src: 'audio/songs/idwia.mp3' },
+					{ id: 'waveform5', src: 'audio/songs/lock_time.mp3' },
+					{ id: 'waveform6', src: 'audio/songs/dfil.mp3' },
+					{ id: 'waveform7', src: 'audio/jazz/tiramisu.mp3' }
+					];
 
-				if (!audioUnlocked) {
-					ws.play();   // unlocks AudioContext
-					ws.pause();
-					audioUnlocked = true;
+					const wavesurfers = {};
+					let audioUnlocked = false;
+
+					// Initialize only visible tracks
+					function initWave(track) {
+					const container = document.getElementById(track.id);
+					if (!container || container.offsetParent === null) return;
+
+					if (wavesurfers[track.id]) return; // already initialized
+
+					wavesurfers[track.id] = WaveSurfer.create({
+						container: `#${track.id}`,
+						waveColor: '#ccc',
+						progressColor: '#ffcc00',
+						height: 80,
+						normalize: true
+					});
+
+					try {
+						wavesurfers[track.id].load(track.src);
+					} catch (err) {
+						console.warn('WaveSurfer load error:', track.src, err);
+					}
+					}
+
+					// Initialize all visible tracks on page load
+					tracks.forEach(initWave);
+
+					// Re-initialize tracks whenever language changes
+					if (window.smartLangSwitcher) {
+					const originalApplyLanguage = window.smartLangSwitcher.applyLanguage.bind(window.smartLangSwitcher);
+					window.smartLangSwitcher.applyLanguage = () => {
+						originalApplyLanguage();
+						tracks.forEach(initWave); // load only visible tracks
+					};
+					}
+
+					// Play/Pause buttons
+					document.querySelectorAll('.play-pause').forEach(button => {
+					button.addEventListener('click', () => {
+						const waveId = button.dataset.wave;
+						const ws = wavesurfers[waveId];
+						if (!ws) return;
+
+						if (!audioUnlocked) {
+						ws.play();   // unlock AudioContext
+						ws.pause();
+						audioUnlocked = true;
+						}
+
+						ws.playPause();
+					});
+					});
 				}
-
-				ws.playPause();
 				});
-			});
-
-			});
-			</script>
+				</script>
 
 	</body>
 </html>
