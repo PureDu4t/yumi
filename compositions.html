@@ -592,6 +592,54 @@
 				}
 				});
 				</script>
+				
+				<script>
+					document.addEventListener('DOMContentLoaded', () => {
+
+					// ----------------------------
+					// 1️⃣ Video Player Initialization
+					// ----------------------------
+					const videoTracks = [
+						{ id: 'yt1', type: 'youtube', src: 'https://www.youtube.com/embed/XXXX' },
+						{ id: 'yt2', type: 'youtube', src: 'https://www.youtube.com/embed/YYYY' },
+						{ id: 'bili1', type: 'bilibili', src: 'https://player.bilibili.com/player.html?bvid=BVXXXXXX' }
+						// add more as needed
+					];
+
+					const players = {};
+
+					function initVideo(track) {
+						const container = document.getElementById(track.id);
+						if (!container || container.offsetParent === null) return; // skip hidden
+
+						if (players[track.id]) return; // already initialized
+
+						const iframe = document.createElement('iframe');
+						iframe.src = track.src;
+						iframe.width = '560';
+						iframe.height = '315';
+						iframe.frameBorder = '0';
+						iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+						iframe.allowFullscreen = true;
+
+						container.appendChild(iframe);
+						players[track.id] = iframe;
+					}
+
+					// Initialize visible videos on page load
+					videoTracks.forEach(initVideo);
+
+					// Re-initialize videos whenever language changes
+					if (window.smartLangSwitcher) {
+						const originalApplyLanguage = window.smartLangSwitcher.applyLanguage.bind(window.smartLangSwitcher);
+						window.smartLangSwitcher.applyLanguage = () => {
+						originalApplyLanguage();
+						videoTracks.forEach(initVideo); // load only visible iframes
+						};
+					}
+
+					});
+					</script>
 
 	</body>
 </html>
