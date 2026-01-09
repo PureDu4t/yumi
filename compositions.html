@@ -579,50 +579,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ============================
-  // 3️⃣ YouTube / Bilibili Players
-  // ============================
-  const videoTracks = [
-    { id: 'youtube1', src: 'https://www.youtube.com/embed/DGOSqMZuFik', lang: 'en' },
-    { id: 'bilibili1', src: 'https://player.bilibili.com/player.html?bvid=BV1xxxxxxx', lang: 'zh' },
-    { id: 'youtube2', src: 'https://www.youtube.com/embed/49cbHPdj-F4', lang: 'en' },
-    { id: 'bilibili2', src: 'https://player.bilibili.com/player.html?bvid=BV2xxxxxxx', lang: 'zh' }
-  ];
-
-  function updateIframesLanguage(lang) {
-    videoTracks.forEach(track => {
-      const container = document.getElementById(track.id);
-      if (!container) return;
-
-      // Show/hide based on language
-      container.style.display = track.lang === lang ? '' : 'none';
-
-      // Create iframe only once
-      if (track.lang === lang && !container.querySelector('iframe')) {
-        const iframe = document.createElement('iframe');
-        iframe.src = track.src;
-        iframe.width = '100%';
-        iframe.height = '315';
-        iframe.title = track.lang === 'zh' ? 'Bilibili video player' : 'YouTube video player';
-        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-        iframe.setAttribute('allowfullscreen', '');
-        container.appendChild(iframe);
-      }
-    });
-  }
-
-  // Initial display
-  updateIframesLanguage(document.documentElement.lang);
-
-  // Language switcher integration
-  if (window.smartLangSwitcher) {
-    const originalApply = window.smartLangSwitcher.applyLanguage.bind(window.smartLangSwitcher);
-    window.smartLangSwitcher.applyLanguage = function () {
-      originalApply();
-      updateIframesLanguage(this.currentLang);
-    };
-  }
-
 });
 </script>
 
