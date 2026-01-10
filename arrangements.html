@@ -48,16 +48,77 @@
 							</a></li>
 							</li>
 						</ul>
-					<ul class="icons">
-						<li><a href="https://www.youtube.com/@jcpuredust" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-						<li><a href="https://www.instagram.com/jcpuredust" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-						<li>
-							<a href="https://jcpuredust.itch.io"
-								class="icon brands fa-itch-io">
+					<!-- English version -->
+						<span data-lang="en">
+						<ul class="icons"> 
+							<li>
+							<a href="https://www.youtube.com/@jcpuredust" class="icon brands fa-youtube">
+								<span class="label">YouTube</span>
+							</a>
+							</li>
+							<li>
+							<a href="https://www.instagram.com/jcpuredust" class="icon brands fa-instagram">
+								<span class="label">Instagram</span>
+							</a>
+							</li>
+							<li>
+							<a href="https://jcpuredust.itch.io" class="icon brands fa-itch-io">
 								<span class="label">itch.io</span>
 							</a>
-						</li>
-					</ul>
+							</li>
+						</ul>
+						</span>
+
+						<!-- Chinese version -->
+						<span data-lang="zh" style="display:none;">
+						<ul class="icons"> 
+							<li>
+							<a href="https://space.bilibili.com/438588156?spm_id_from=333.1387.0.0"
+								class="icon solid fa-tv"
+								target="_blank"
+								aria-label="哔哩哔哩">
+								<span class="label">哔哩哔哩</span>
+							</a>
+							</li>
+							<li>
+							<a href="#" id="wechat-icon" class="icon brands fa-weixin">
+								<span class="label">微信</span>
+							</a>
+
+							<!-- Hidden QR image -->
+							<div id="wechat-qr-popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+								background:rgba(0,0,0,0.7); justify-content:center; align-items:center; z-index:1000;">
+								<div style="position:relative;">
+									<img src="images/wechat_qr.jpg" alt="WeChat QR" style="max-width:300px; max-height:80vh; border-radius:10px;">
+									<button id="close-wechat-qr"
+										style="
+										position:absolute;
+										top:-10px;
+										right:-10px;
+										width:30px;
+										height:30px;
+										background:#fff;
+										border:none;
+										border-radius:50%;
+										cursor:pointer;
+										display:flex;
+										align-items:center;
+										justify-content:center;
+										padding:0;
+										line-height:1;
+									">
+										<i class="fas fa-times" style="font-size:16px; line-height:1;"></i>
+									</button>
+								</div>
+							</div>
+							</li>
+							<li>
+							<a href="https://jcpuredust.itch.io" class="icon brands fa-itch-io">
+								<span class="label">itch.io</span>
+							</a>
+							</li>
+						</ul>
+						</span>
 					</nav>
 
 				<!-- Main -->
@@ -406,26 +467,71 @@
 							<section>
 								<h3 data-lang="en">Phone</h3>
 								<h3 data-lang="zh" style="display:none;">电话</h3>
-								<p><a href="tel:+16179014250">+1 (617) 901-4250</a></p>
-							</section>
+								<p data-lang="en">
+									<a href="tel:+16179014250">+1 (617) 901-4250</a>
+								</p>
+
+								<p data-lang="zh" style="display:none;">
+									<a href="tel:+8617821158625">+86 178-2115-8625</a>
+								</p>
 							<section>
 								<h3 data-lang="en">Email</h3>
 								<h3 data-lang="zh" style="display:none;">电子邮箱</h3>
-								<p><a href="mailto:yumiracer@gmail.com">yumiracer@gmail.com</a></p>
+								<p data-lang="en">
+									<a href="mailto:yumiracer@gmail.com">yumiracer@gmail.com</a>
+								</p>
+
+								<p data-lang="zh" style="display:none;">
+									<a href="mailto:jcpuredust@qq.com">jcpuredust@qq.com</a>
+								</p>
 							</section>
 							<section>
-								<h3 data-lang="en">Social</h3>
-								<h3 data-lang="zh" style="display:none;">社交媒体</h3>
+							<!-- English social icons -->
+							<span data-lang="en">
 								<ul class="icons alt">
-									<li><a href="https://www.youtube.com/@jcpuredust" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-									<li><a href="https://www.instagram.com/jcpuredust" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 									<li>
-									<a href="https://jcpuredust.itch.io"
-										class="icon brands fa-itch-io">
-										<span class="label">itch.io</span>
-									</a>
+										<a href="https://www.youtube.com/@jcpuredust" class="icon brands fa-youtube">
+											<span class="label">YouTube</span>
+										</a>
+									</li>
+									<li>
+										<a href="https://www.instagram.com/jcpuredust" class="icon brands fa-instagram">
+											<span class="label">Instagram</span>
+										</a>
+									</li>
+									<li>
+										<a href="https://jcpuredust.itch.io" class="icon brands fa-itch-io">
+											<span class="label">itch.io</span>
+										</a>
 									</li>
 								</ul>
+							</span>
+
+							<!-- Chinese social icons -->
+							<span data-lang="zh" style="display:none;">
+								<ul class="icons alt">
+									<li>
+										<a href="https://space.bilibili.com/438588156?spm_id_from=333.1387.0.0"
+										class="icon solid fa-tv"
+										target="_blank"
+										aria-label="哔哩哔哩">
+											<span class="label">哔哩哔哩</span>
+										</a>
+									</li>
+
+									<li>
+										<a href="#" class="icon brands fa-weixin footer-wechat-icon">
+											<span class="label">微信</span>
+										</a>
+									</li>
+
+									<li>
+										<a href="https://jcpuredust.itch.io" class="icon brands fa-itch-io">
+											<span class="label">itch.io</span>
+										</a>
+									</li>
+								</ul>
+							</span>
 							</section>
 						</section>
 					</footer>
@@ -449,6 +555,27 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/smart-language-switcher.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				document.addEventListener('DOMContentLoaded', () => {
+					const popup = document.getElementById('wechat-qr-popup');
+					const closeBtn = document.getElementById('close-wechat-qr');
+
+					document.querySelectorAll('#wechat-icon, .footer-wechat-icon').forEach(icon => {
+						icon.addEventListener('click', e => {
+							e.preventDefault();
+							popup.style.display = 'flex';
+						});
+					});
+
+					closeBtn.addEventListener('click', () => {
+						popup.style.display = 'none';
+					});
+
+					popup.addEventListener('click', e => {
+						if (e.target === popup) popup.style.display = 'none';
+					});
+				});
+				</script>
 
 			<script>
 			const form = document.getElementById('contact-form');
