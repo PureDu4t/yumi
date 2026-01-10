@@ -4962,6 +4962,35 @@ header.major.left {
 	pointer-events: none;
 	}
 
+/* --- FIX FOOTER CONTACT ALIGNMENT --- */
+
+/* 1. Restore left alignment ONLY for contact info */
+#footer .split.contact > section {
+  text-align: left;
+}
+
+/* 2. Fix social icon horizontal offset */
+#footer .split.contact ul.icons {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* 3. Prevent icons from centering themselves */
+#footer .split.contact ul.icons li {
+  display: inline-block;
+  margin-left: 0;
+}
+
+/* 4. Ensure headings align properly */
+#footer .split.contact h3 {
+  text-align: left;
+}
+
+/* --- LEFT-ALIGN CONTACT FORM LABELS ONLY --- */
+#footer form label {
+  text-align: left;
+  display: block;
+}
 
 
 
